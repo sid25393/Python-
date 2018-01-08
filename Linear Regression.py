@@ -1,20 +1,4 @@
 
-# coding: utf-8
-
-# ___
-# 
-# <a href='http://www.pieriandata.com'> <img src='../Pierian_Data_Logo.png' /></a>
-# ___
-# # Linear Regression with Python
-# 
-# ** This is mostly just code for reference. Please watch the video lecture for more info behind all of this code.**
-# 
-# Your neighbor is a real estate agent and wants some help predicting housing prices for regions in the USA. It would be great if you could somehow create a model for her that allows her to put in a few features of a house and returns back an estimate of what the house would sell for.
-# 
-# She has asked you if you could help her out with your new data science skills. You say yes, and decide that Linear Regression might be a good path to solve this problem!
-# 
-# Your neighbor then gives you some information about a bunch of houses in regions of the United States,it is all in the data set: USA_Housing.csv.
-# 
 # The data contains the following columns:
 # 
 # * 'Avg. Area Income': Avg. Income of residents of the city house is located in.
@@ -25,9 +9,7 @@
 # * 'Price': Price that the house sold at
 # * 'Address': Address for the house
 
-# **Let's get started!**
-# ## Check out the data
-# We've been able to get some data from your neighbor for housing prices as a csv set, let's get our environment ready with the libraries we'll need and then import the data!
+# 
 # ### Import Libraries
 
 # In[255]:
@@ -40,7 +22,7 @@ import seaborn as sns
 get_ipython().magic('matplotlib inline')
 
 
-# ### Check out the Data
+# ### Checking out the Data
 
 # In[256]:
 
@@ -74,7 +56,7 @@ USAhousing.columns
 
 # # EDA
 # 
-# Let's create some simple plots to check out the data!
+#
 
 # In[261]:
 
@@ -96,7 +78,7 @@ sns.heatmap(USAhousing.corr())
 
 # ## Training a Linear Regression Model
 # 
-# Let's now begin to train out regression model! We will need to first split up our data into an X array that contains the features to train on, and a y array with the target variable, in this case the Price column. We will toss out the Address column because it only has text info that the linear regression model can't use.
+# 
 # 
 # ### X and y arrays
 
@@ -110,7 +92,7 @@ y = USAhousing['Price']
 
 # ## Train Test Split
 # 
-# Now let's split the data into a training set and a testing set. We will train out model on the training set and then use the test set to evaluate the model.
+# 
 
 # In[265]:
 
@@ -146,7 +128,7 @@ lm.fit(X_train,y_train)
 
 # ## Model Evaluation
 # 
-# Let's evaluate the model by checking out it's coefficients and how we can interpret them.
+# 
 
 # In[270]:
 
@@ -170,7 +152,7 @@ coeff_df
 # - Holding all other features fixed, a 1 unit increase in **Avg. Area Number of Bedrooms** is associated with an **increase of \$2233.80 **.
 # - Holding all other features fixed, a 1 unit increase in **Area Population** is associated with an **increase of \$15.15 **.
 # 
-# Does this make sense? Probably not because I made up this data. If you want real data to repeat this sort of analysis, check out the [boston dataset](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html):
+# 
 # 
 # 
 
@@ -181,7 +163,7 @@ coeff_df
 
 # ## Predictions from our Model
 # 
-# Let's grab predictions off our test set and see how well it did!
+# 
 
 # In[279]:
 
@@ -242,8 +224,4 @@ print('MSE:', metrics.mean_squared_error(y_test, predictions))
 print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, predictions)))
 
 
-# This was your first real Machine Learning Project! Congrats on helping your neighbor out! We'll let this end here for now, but go ahead and explore the Boston Dataset mentioned earlier if this particular data set was interesting to you! 
-# 
-# Up next is your own Machine Learning Project!
-# 
-# ## Great Job!
+#
